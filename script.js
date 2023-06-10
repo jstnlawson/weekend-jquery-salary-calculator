@@ -19,7 +19,7 @@ function onReady() {
 
     $('.employee-data').on('click', '.delete', deleteData)
 
-    $('.submit-button').on('click', addToTotalMonthly)
+    //$('.submit-button').on('click', addToTotalMonthly)
 
 }
 
@@ -30,7 +30,6 @@ function submitData(event) {
     // totalMonthly = salaryVal
     // totalMonthly++
     // console.log('total monthly is now', totalMonthly)
-
     // $('#add-to-total').text(totalMonthly)
 
 
@@ -60,7 +59,17 @@ function submitData(event) {
     $('#title-input').val('')
     $('#salary-input').val('')
 
-    //$('#add-to-total').text(Number($('#add-to-total').text()  + salaryVal))
+    //CALCULATE TOTAL:
+
+    //convert current total string to a number
+    let currentTotal = Number($('#add-to-total').text())
+    //turn salaryVal into a number
+    salaryVal = Number(salaryVal)
+    //make a variable that adds the numbers
+    let newTotal = currentTotal + salaryVal
+    //add newTotal to #add-to-total <span>
+    $('#add-to-total').text(newTotal)
+    console.log('new total is', newTotal)
 }
 
 function deleteData() {
@@ -69,18 +78,9 @@ function deleteData() {
     //remove <tr> from <tbody>
     //button is in a <td> that is in a <tr>
     $(this).parent().parent().remove()
-  
-    // //setting todoCOunt on removal
-    // todoCount--//re define this to decrement before we call it again
-    // $('#todo-count').text(todoCount)
 }    
-    
-// function addRedCount () {
-//     console.log('red count + 1')
-//     $("#red-count").text(parseInt($("#red-count").text()) + 1)
-// }
 
-function addToTotalMonthly() {
-    console.log('add to total function')
-    $('#add-to-total').text(Number($('#add-to-total').text() + salaryVal))
-}
+// function addToTotalMonthly() {
+//     console.log('add to total function')
+//     $('#add-to-total').text(Number($('#add-to-total').text() + salaryVal))
+
