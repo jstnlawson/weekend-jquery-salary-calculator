@@ -3,7 +3,7 @@ $(document).ready(onReady);
 
 
 //✅ hit submit and add new row of data to the form/ clear data from inputs
-//✅ calculate monthly cost and add it to total
+//✅ calculate monthly cost (annual / 12) and add it to total
 //✅ if it exceeds 20,000 add a red backgroung to the monthly cost
 //✅ add delete button that removes employee(don't need to remove cost)
 
@@ -64,8 +64,8 @@ function submitData(event) {
 
     //convert current total string to a number
     let currentTotal = Number($('#add-to-total').text())
-    //turn salaryVal into a number
-    salaryVal = Number(salaryVal)
+    //turn salaryVal into a number divided by 12
+    salaryVal = Number(salaryVal) / 12
     //make a variable that adds the numbers
     let newTotal = currentTotal + salaryVal
     //add newTotal to #add-to-total <span>
