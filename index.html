@@ -10,37 +10,77 @@
     <title>Salary Calculator</title>
 </head>
 <body>
-    <h1>Salary Calculator</h1>
-    <table>
-        <thead id="table-head">
+    <header>
+        <h1>Salary Calculator</h1>
+    </header>
+    <form class="input-form">
+        <input
+          placeholder="First name"
+          type="text" 
+          id="first-input"
+        >
+        <input
+          placeholder="Last Name"
+          type="text"
+          id="last-input"
+        >
+        <input
+          placeholder="ID"
+          type="text" 
+          id="id-input"
+        >
+        <input
+          placeholder="Title"
+          type="text"
+          id="title-input"
+        >
+        <input
+          placeholder="Annual Salary"
+          type="text"
+          id="salary-input"
+          >
+       </form> 
+      <button class="submit-button">Submit</button>
+      <table class="calculator-table">
+        <thead>
             <tr>
-                <th>xxx</th>
-                <th>xxx</th>
-                <th>xxx</th>
-                <th>xxx</th>
-                <th>xxx</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+                <th>delete below</th>
             </tr>
         </thead>
-        <button type="submit" id="submit-button"></button>
         <tbody>
             <tr>
-                <td>a</td>
-                <td>b</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td><button class="delete">delete</button></td>
             </tr>
+            <tr class="active-row">
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td><button class="delete">delete</button></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- i had to create the 6 <th>'s below to get the background-color to work?? -->
             <tr>
-                <td>c</td>
-                <td>d</td>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
-            <tr>
-                <td>e</td>
-                <td>f</td>
-            </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>xxx</th>
-                </tr>
-            </tfoot>    
+        </tfoot>    
         
     </table>
 </body>
