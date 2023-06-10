@@ -3,14 +3,15 @@ $(document).ready(onReady);
 
 
 //✅ hit submit and add new row of data to the form/ clear data from inputs
-//calculate monthly cost and add it to total
-//if it exceeds 20,000 add a red backgroung to the monthly cost
+//✅ calculate monthly cost and add it to total
+//✅ if it exceeds 20,000 add a red backgroung to the monthly cost
 //✅ add delete button that removes employee(don't need to remove cost)
 
 //STRETCH:
+//add styling or extra function
 //remove cost when employee is removed
 
-let totalMonthly = 0
+//let totalMonthly = 0
 
 function onReady() {
     console.log('onReady is go!')
@@ -70,6 +71,10 @@ function submitData(event) {
     //add newTotal to #add-to-total <span>
     $('#add-to-total').text(newTotal)
     console.log('new total is', newTotal)
+
+    if (newTotal > 20000) {
+        $('#total-text').addClass('red-background')
+    }
 }
 
 function deleteData() {

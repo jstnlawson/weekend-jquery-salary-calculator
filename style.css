@@ -48,7 +48,7 @@ h1 {
 }
 
 /*⬇️ make every other row light gray */
-.calculator-table tbody tr:nth-last-of-type(odd) {
+.calculator-table tbody tr:nth-last-of-type(even) {
     background-color: #f3f3f3;
 }
 
@@ -68,4 +68,9 @@ h1 {
 
 #total-text {
     text-align: right;
+}
+
+.red-background {
+    background-color: red;
+    color: white;
 }
