@@ -8,7 +8,7 @@ $(document).ready(onReady);
 //✅ add delete button that removes employee(don't need to remove cost)
 
 //STRETCH:
-//add styling or extra function
+//✅ add styling or extra function
 //remove cost when employee is removed
 
 //let totalMonthly = 0
@@ -23,9 +23,7 @@ function onReady() {
 
     $('.employee-data').on('click', '.delete', deleteData)
 
-    $('#add-to-total').on('click', removeSalary)
-
-    //$('.submit-button').on('click', addToTotalMonthly)
+    //$('.employee-data').on('click', '.delete', removeSalary)
 
 }
 
@@ -54,7 +52,7 @@ function submitData(event) {
             <td>${lastNameVal}</td>
             <td>${idVal}</td>
             <td>${titleVal}</td>
-            <td>${salaryVal}</td>
+            <td class="input-total">${salaryVal}</td>
             <td><button class="delete">delete</button></td>
         </tr>
     `)
@@ -78,7 +76,9 @@ function submitData(event) {
     console.log('new total is', newTotal)
 
     if (newTotal > 20000) {
-        $('#total-text').addClass('red-background')
+        //I did this instead of red background
+        $('.stamp').css('display', 'inline-block')
+        //this changes the .stamp from display none to inline-block
     }
 }
 
@@ -89,22 +89,19 @@ function deleteData() {
     //button is in a <td> that is in a <tr>
     $(this).parent().parent().remove()
 
-    //setting todoCOunt on removal
-    todoCount--//re define this to decrement before we call it again
-    $('#todo-count').text(todoCount)
-}
-    // Once the employee is deleted, update the _Total 
-    // Monthly Cost_ section on the page to reflect the 
-    // employee's removal. _HINT:_ You will need to 
-    // figure out which employee was removed, in order 
-    // to subtract their salary from the total. Consider 
-    // using `.text()` as a getter, or look into jQuery's 
-    // `.data()` function. This is tricky! 
+} 
 
-function removeSalary() {
-   //remove salaryVal from the <span> named add-to-total
+//function removeSalary() {
+    //console.log('removeSalary function')
+   //remove (.salary / 12)from the <span> named add-to-total
+   //let totalMonthly = Number($('#add-to-total').text())
+   //let salary = $('.input-total').val('')
+   //salary = Number(salary) / 12
+   //let postDelete = totalMonthly - salary
+   //$('#add-to-total').append()
+   //return postDelete
     
-}
+//}
 
     
 
