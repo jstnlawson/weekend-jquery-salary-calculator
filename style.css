@@ -1,38 +1,77 @@
-h1 {
-    background-color: #009879;
-    color: #f3f3f3;
-    min-width: 400px;
-    max-width: 90vh;
-    border-radius: 5px;
-    text-align: center;
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    /* There was some weird white space to the right that 
+    I don't understand, this got rid of it*/
 }
 
-.input-val {
-    min-width: 400px;
-    max-width: 90vh;
+#outer-box {
+    border: #3c7fac solid 1.5px;
+    border-radius: 5px;
+    max-width: 650px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-variant: petite-caps;
+}
+
+h1 {
+    background-color: #3c7fac;
+    color: #f3f3f3;
+    font-size: xxx-large;
+    width: 99vh;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    margin: 20px 7px;
+    color: #4a4848;
+}
+
+#form-div {
+    max-width: 650px;
+    min-width: 300px;
+    margin-left: 6px;
+}
+
+input {
+    width: 116px;
 }
 
 .submit-button {
     float: right;
-    border-radius: 5px;
+    margin: 6px 6px 3px 0;
 }
 
 .calculator-table {
     border-collapse: collapse;
-    margin: 25px 0;
-    /* what is the meaning of this margin size */
-    font-size: 0.9em;
-    min-width: 400px;
-    max-width: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: large;
+    width: 99vh;
     border-radius: 5px;
     overflow: hidden;
     /*⬆️i think this overflow setting ensures the radius styling display properly  */
-    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     /*this create an opaque shadow */
 }
 
+.calculator-table thead tbody tfoot {
+    width: 100vh;
+}
+
 .calculator-table thead tr {
-    background-color: #009879;
+    background-color: #3c7fac;
     color: white;
     text-align: left;
     font-weight: bold; /*not doing anything */
@@ -49,21 +88,21 @@ h1 {
 
 /*⬇️ make every other row light gray */
 .calculator-table tbody tr:nth-last-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: whitesmoke;
 }
 
 .calculator-table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    color: #3c7fac;
 } /* maybe use this for a hover or something*/
 
 /*⬇️ put a border on the bottom of the last row to match the thead*/
-.calculator-table tbody tr:nth-last-of-type {
+/* .calculator-table tbody tr:nth-last-of-type {
     border-bottom: 2px solid #009879;
-} /*not working, does work with odd or even but not like this???*/
+} not working, does work with odd or even but not like this??? */
 
 .calculator-table tfoot {
-    background-color: #009879;
+    background-color: #3c7fac;
 }
 
 #total-text {

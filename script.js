@@ -12,6 +12,9 @@ $(document).ready(onReady);
 //remove cost when employee is removed
 
 //let totalMonthly = 0
+let currentTotal = 0
+let salaryVal = 0
+let newTotal = 0
 
 function onReady() {
     console.log('onReady is go!')
@@ -19,6 +22,8 @@ function onReady() {
     $('.submit-button').on('click', submitData)
 
     $('.employee-data').on('click', '.delete', deleteData)
+
+    $('#add-to-total').on('click', removeSalary)
 
     //$('.submit-button').on('click', addToTotalMonthly)
 
@@ -38,7 +43,7 @@ function submitData(event) {
     let lastNameVal = $('#last-input').val()
     let idVal = $('#id-input').val()
     let titleVal = $('#title-input').val()
-    let salaryVal = $('#salary-input').val()
+    salaryVal = $('#salary-input').val()
 
     //let formattedEmployeeData = `${firstNameVal} (${lastNameVal} ${idVal} ${titleVal} ${salaryVal})` 
     //I'm not sure how to do the syntax here so I did it the long way below
@@ -63,13 +68,13 @@ function submitData(event) {
     //CALCULATE TOTAL:
 
     //convert current total string to a number
-    let currentTotal = Number($('#add-to-total').text())
+    currentTotal = Number($('#add-to-total').text())
     //turn salaryVal into a number divided by 12
     salaryVal = Number(salaryVal) / 12
     //make a variable that adds the numbers
-    let newTotal = currentTotal + salaryVal
+    newTotal = currentTotal + salaryVal
     //add newTotal to #add-to-total <span>
-    $('#add-to-total').text(newTotal)
+    $('#add-to-total').text(newTotal.toFixed(2))
     console.log('new total is', newTotal)
 
     if (newTotal > 20000) {
@@ -83,7 +88,25 @@ function deleteData() {
     //remove <tr> from <tbody>
     //button is in a <td> that is in a <tr>
     $(this).parent().parent().remove()
-}    
+
+    //setting todoCOunt on removal
+    todoCount--//re define this to decrement before we call it again
+    $('#todo-count').text(todoCount)
+}
+    // Once the employee is deleted, update the _Total 
+    // Monthly Cost_ section on the page to reflect the 
+    // employee's removal. _HINT:_ You will need to 
+    // figure out which employee was removed, in order 
+    // to subtract their salary from the total. Consider 
+    // using `.text()` as a getter, or look into jQuery's 
+    // `.data()` function. This is tricky! 
+
+function removeSalary() {
+   //remove salaryVal from the <span> named add-to-total
+    
+}
+
+    
 
 // function addToTotalMonthly() {
 //     console.log('add to total function')
